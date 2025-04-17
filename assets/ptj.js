@@ -177,3 +177,59 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
+// Function to fetch LeetCode stats
+function fetchLeetCodeStats() {
+  fetch('https://leetcode-stats-api.herokuapp.com/aj2980')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Update the stats in the DOM
+      document.getElementById('leetcode-solved').textContent = data.totalSolved || '--';
+      document.getElementById('leetcode-easy').textContent = data.easySolved || '--';
+      document.getElementById('leetcode-medium').textContent = data.mediumSolved || '--';
+      document.getElementById('leetcode-hard').textContent = data.hardSolved || '--';
+    })
+    .catch(error => {
+      console.error('Error fetching LeetCode stats:', error);
+      // Set fallback values in case of error
+      document.getElementById('leetcode-solved').textContent = '300+';
+      document.getElementById('leetcode-easy').textContent = '150+';
+      document.getElementById('leetcode-medium').textContent = '120+';
+      document.getElementById('leetcode-hard').textContent = '30+';
+    });
+}
+
+// Function to fetch GeeksforGeeks stats
+function fetchGFGStats() {
+  fetch('https://geeks-for-geeks-api.vercel.app/jainabhi7mb6')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Update the stats in the DOM
+      document.getElementById('gfg-rank').textContent = data.institution_rank || 'Top 5%';
+      document.getElementById('gfg-score').textContent = data.coding_score || '350+';
+      document.getElementById('gfg-problems').textContent = data.total_problems_solved || '200+';
+    })
+    .catch(error => {
+      console.error('Error fetching GFG stats:', error);
+      // Set fallback values in case of error
+      document.getElementById('gfg-rank').textContent = '7329';
+      document.getElementById('gfg-score').textContent = '450+';
+      document.getElementById('gfg-problems').textContent = '120+';
+    });
+}
+
+// Call these functions when the document is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  fetchLeetCodeStats();
+  fetchGFGStats();
+});

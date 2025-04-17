@@ -182,125 +182,136 @@
         </div>
       </section>
 
-      <!--===================== SKILLS =====================-->
-      <section class="skills section" id="skills">
-        <h2 class="section__title">Skills</h2>
-        <span class="section__subtitle">My technical level</span>
+      <!--======================= Coding Profiles ========================-->
+      <section class="coding-profiles section" id="coding-profiles">
+        <h2 class="section__title">Coding Profiles</h2>
+        <span class="section__subtitle">My Problem Solving Journey</span>
 
-        <div class="skills__container container grid">
-          <div>
-            <!--==================== Skill 1 =================-->
-            <div class="skills__content skills__open">
-              <div class="skills__header">
-                <i class="fas fa-pencil-ruler skills__icon"></i>
-
-                <div>
-                  <h1 class="skills__title">Programming Languages</h1>
+        <div class="profiles-container">
+          <!-- LeetCode Profile -->
+          <div class="profile-card">
+            <img src="assets/img/leetcode2.png" class="profile-img" alt="LeetCode Logo" />
+            <div class="profile-content">
+              <h3 class="profile-title">LeetCode Profile</h3>
+              <p class="profile-description">Algorithmic problem solving and competitive programming</p>
+              <div class="coding-stats">
+                <div class="coding-stat">
+                  <span class="stat-value" id="leetcode-solved">--</span>
+                  <span class="stat-label">Total</span>
                 </div>
-
-                <i class="uil uil-angle-down skills__arrow"></i>
-              </div>
-              
-              <div class="skills__list grid">
-                <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">Python</h3>
-                  </div>
+                <div class="coding-stat">
+                  <span class="stat-value" id="leetcode-easy">--</span>
+                  <span class="stat-label">Easy</span>
                 </div>
-                <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">C++</h3>
-                  </div>
+                <div class="coding-stat">
+                  <span class="stat-value" id="leetcode-medium">--</span>
+                  <span class="stat-label">Medium</span>
                 </div>
-                <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">JavaScript</h3>
-                  </div>
-                </div>
-                <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">SQL</h3>
-                  </div>
+                <div class="coding-stat">
+                  <span class="stat-value" id="leetcode-hard">--</span>
+                  <span class="stat-label">Hard</span>
                 </div>
               </div>
             </div>
-
-            <!--==================== Skill 2 =================-->
-            <div class="skills__content skills__close">
-              <div class="skills__header">
-                <i class="fas fa-code skills__icon"></i>
-
-                <div>
-                  <h1 class="skills__title">Data Analysis</h1>
-                </div>
-
-                <i class="uil uil-angle-down skills__arrow"></i>
-              </div>
-
-              <div class="skills__list grid">
-                <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">Pandas</h3>
-                  </div>
-                </div>
-                <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">NumPy</h3>
-                  </div>
-                </div>
-                <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">Matplotlib</h3>
-                  </div>
-                </div>
-                <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">Seaborn</h3>
-                  </div>
-                </div>
-              </div>
+            <hr />
+            <div class="profile-footer">
+              <img src="assets/img/leetcode2.png" class="profile-icon" alt="LeetCode Icon" />
+              <a href="https://leetcode.com/u/aj2980/" target="_blank" class="profile-link">
+                View Profile on LeetCode
+              </a>
             </div>
           </div>
 
-          <div>
-            <!--==================== Skill 3 =================-->
-            <div class="skills__content skills__close">
-              <div class="skills__header">
-                <i class="fas fa-swatchbook skills__icon"></i>
-                <div>
-                  <h1 class="skills__title">Technologies</h1>
+          <!-- GeeksforGeeks Profile -->
+          <div class="profile-card">
+            <img src="assets/img/gfg.png" class="profile-img" alt="GeeksforGeeks Logo" />
+            <div class="profile-content">
+              <h3 class="profile-title">GeeksforGeeks Profile</h3>
+              <p class="profile-description">Data structures and algorithms practice platform</p>
+              <div class="coding-stats">
+                <div class="coding-stat">
+                  <span class="stat-value" id="gfg-rank">--</span>
+                  <span class="stat-label">Rank</span>
                 </div>
-
-                <i class="uil uil-angle-down skills__arrow"></i>
-              </div>
-
-              <div class="skills__list grid">
-                <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">Node.js</h3>
-                  </div>
+                <div class="coding-stat">
+                  <span class="stat-value" id="gfg-score">--</span>
+                  <span class="stat-label">Score</span>
                 </div>
-                <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">TensorFlow</h3>
-                  </div>
-                </div>
-                <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">MySQL</h3>
-                  </div>
-                </div>
-                <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">PostgreSQL</h3>
-                  </div>
-                </div>
-                <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">Git</h3>
-                  </div>
+                <div class="coding-stat">
+                  <span class="stat-value" id="gfg-problems">--</span>
+                  <span class="stat-label">Solved</span>
                 </div>
               </div>
+            </div>
+            <hr />
+            <div class="profile-footer">
+              <img src="assets/img/gfg.png" class="profile-icon" alt="GFG Icon" />
+              <a href="https://www.geeksforgeeks.org/user/jainabhi7mb6/" target="_blank" class="profile-link">
+                View Profile on GeeksforGeeks
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--===================== Skills Profiles =====================-->
+      <section class="skills-profiles section" id="skills-profiles">
+        <h2 class="section__title">Skills</h2>
+        <span class="section__subtitle">My Technical Expertise</span>
+
+        <div class="profiles-container">
+          <!-- Programming Languages -->
+          <div class="profile-card">
+            <img src="assets/img/js.png" class="profile-img" alt="Programming Logo" />
+            <div class="profile-content">
+              <h3 class="profile-title">Programming Languages</h3>
+              <p class="profile-description">
+                Proficient in multiple programming languages for software development.
+              </p>
+              <ul class="skills-list">
+                <li>Python</li>
+                <li>C++</li>
+                <li>JavaScript</li>
+                <li>SQL</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Data Analysis -->
+          <div class="profile-card">
+            <img src="assets/img/da.png" class="profile-img" alt="Data Analysis Logo" />
+            <div class="profile-content">
+              <h3 class="profile-title">Data Analysis</h3>
+              <p class="profile-description">
+                Experienced in analyzing and visualizing data using various tools.
+              </p>
+              <ul class="skills-list">
+                <li>Pandas</li>
+                <li>NumPy</li>
+                <li>Matplotlib</li>
+                <li>Seaborn</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Technologies -->
+          <div class="profile-card">
+            <img src="assets/img/mern2.png" class="profile-img" alt="Technologies Logo" />
+            <div class="profile-content">
+              <h3 class="profile-title">Technologies</h3>
+              <p class="profile-description">
+                Skilled in modern technologies for full-stack development and machine learning.
+              </p>
+              <ul class="skills-list">
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>MongoDB</li>
+                <li>TensorFlow</li>
+                <li>MySQL</li>
+                <li>Git</li>
+              </ul>
             </div>
           </div>
         </div>
