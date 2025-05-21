@@ -1179,7 +1179,7 @@ img {
   width: 300px;
   border: 1px solid #ffffff22;
   background-color: #282c34;
-  background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(108, 48, 161, 0.5) 100%);
+  background: linear-gradient(0deg, #5c85d9 0%, rgba(5, 0, 9, 0.84) 10%);
   box-shadow: 0 7px 20px 5px #00000088;
   border-radius: 0.7rem;
   backdrop-filter: blur(7px);
@@ -1261,7 +1261,7 @@ img {
 }
 
 .coding-profiles .stat-label {
-  color: #a89ec9;
+  color: #c9ae9e;
   font-size: 0.8rem;
   text-align: center;
 }
@@ -1289,7 +1289,7 @@ img {
 }
 
 .coding-profiles .profile-link {
-  color: #a89ec9;
+  color: #d2cc05;
   text-decoration: none;
   font-size: 0.9rem;
   transition: 0.3s;
@@ -1319,7 +1319,7 @@ img {
   width: 300px;
   border: 1px solid #ffffff22;
   background-color: #282c34;
-  background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
+  background: linear-gradient(0deg, #5c85d9  0%, rgba(5, 0, 9, 0.84) 10%);
   box-shadow: 0 7px 20px 5px #00000088;
   border-radius: 0.7rem;
   backdrop-filter: blur(7px);
@@ -1399,7 +1399,7 @@ img {
 }
 
 .skills-profiles .skills-list li:hover {
-  background-color: #ee83e5;
+  background-color: var(--first-color);
   color: #fff;
   transition: 0.3s;
 }
@@ -1415,8 +1415,8 @@ img {
   width: 100%;
   max-width: 900px;
   margin: 2rem auto;
-  border: 1px solid #ffffff22;
-  background: linear-gradient(0deg, rgba(40, 44, 52, 1) 0%, rgba(17, 0, 32, 0.5) 100%);
+  border: 1px solid #a40f0f22;
+  background: linear-gradient(0deg, #5c85d9  0%, rgba(5, 0, 9, 0.84) 10%);
   box-shadow: 0 7px 20px 5px #00000088;
   border-radius: 1rem;
   backdrop-filter: blur(7px);
@@ -1476,7 +1476,7 @@ img {
 
 .experience .profile-description {
   font-size: 0.95rem;
-  color: #a89ec9;
+  color: #fff;
   line-height: 1.6;
 }
 
@@ -1499,7 +1499,7 @@ img {
 }
 
 .experience .skills-list li:hover {
-  background-color: #ee83e5;
+  background-color: var(--first-color);
   color: #fff;
   transition: 0.3s;
 }
@@ -1522,4 +1522,13 @@ img {
 /* Dark mode enhancement */
 .dark-theme .experience .profile-card {
   background: linear-gradient(0deg, rgba(30,34,42,1) 0%, rgba(17,0,32,.5) 100%);
+}
+
+.profile-description a {
+    color: #d9d02d; /* Light color for the link text */
+    text-decoration: none; /* Optional: Remove underline */
+}
+
+.profile-description a:hover {
+    color: var(--first-color-lighter); /* Optional: Slightly lighter color on hover */
 }
