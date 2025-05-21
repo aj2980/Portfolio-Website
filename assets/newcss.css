@@ -1179,7 +1179,7 @@ img {
   width: 300px;
   border: 1px solid #ffffff22;
   background-color: #282c34;
-  background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
+  background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(108, 48, 161, 0.5) 100%);
   box-shadow: 0 7px 20px 5px #00000088;
   border-radius: 0.7rem;
   backdrop-filter: blur(7px);
@@ -1406,5 +1406,120 @@ img {
 
 /* Dark theme compatibility */
 .dark-theme .skills-profiles .profile-card {
+  background: linear-gradient(0deg, rgba(30,34,42,1) 0%, rgba(17,0,32,.5) 100%);
+}
+
+
+.experience .profile-card {
+  user-select: none;
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto;
+  border: 1px solid #ffffff22;
+  background: linear-gradient(0deg, rgba(40, 44, 52, 1) 0%, rgba(17, 0, 32, 0.5) 100%);
+  box-shadow: 0 7px 20px 5px #00000088;
+  border-radius: 1rem;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  overflow: hidden;
+  transition: 0.5s all;
+  position: relative;
+  padding: 2rem;
+}
+
+.experience .profile-card::before {
+  position: absolute;
+  content: "";
+  box-shadow: 0 0 100px 40px #ffffff08;
+  top: -10%;
+  left: -100%;
+  transform: rotate(-45deg);
+  height: 60rem;
+  transition: 0.7s all;
+  z-index: 0;
+}
+
+.experience .profile-card:hover {
+  border: 1px solid #ffffff44;
+  box-shadow: 0 7px 50px 10px #000000aa;
+  transform: scale(1.015);
+  filter: brightness(1.2);
+}
+
+.experience .profile-card:hover::before {
+  filter: brightness(0.5);
+  top: -100%;
+  left: 200%;
+}
+
+.experience .profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.experience .profile-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #eee;
+  text-align: center;
+}
+
+.experience .profile-subtitle {
+  font-size: 1rem;
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.experience .profile-description {
+  font-size: 0.95rem;
+  color: #a89ec9;
+  line-height: 1.6;
+}
+
+.experience .skills-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.experience .skills-list li {
+  background-color: #3a3f47;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.experience .skills-list li:hover {
+  background-color: #ee83e5;
+  color: #fff;
+  transition: 0.3s;
+}
+
+/* Optional: Section title styling */
+.experience .section__title {
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.experience .section__subtitle {
+  color: #aaa;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Dark mode enhancement */
+.dark-theme .experience .profile-card {
   background: linear-gradient(0deg, rgba(30,34,42,1) 0%, rgba(17,0,32,.5) 100%);
 }
