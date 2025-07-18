@@ -835,6 +835,7 @@ img {
 .contact__title {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
+  
 }
 
 .contact__subtitle {
@@ -909,7 +910,7 @@ img {
 .footer__copy {
   font-size: var(--smaller-font-size);
   text-align: center;
-  color: var(--text-color-light);
+  color: var(--first-color);
   margin-top: var(--mb-3);
 }
 
@@ -917,7 +918,7 @@ img {
 .footer__link,
 .footer__subtitle,
 .footer__social {
-  color: #fff;
+  color: black;
 }
 
 /*==================== Scroll Up ==================*/
@@ -1174,7 +1175,7 @@ img {
   }
 
   .portfolio__container {
-    background-color: var(--first-color-second);
+    background-color: var(white);
     border-radius: 1rem;
     padding: 3rem 2.5rem 0;
     grid-template-columns: 1fr max-content;
@@ -1529,11 +1530,13 @@ img {
 
 
 .hero__container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  display: flex;
+  flex-direction: row; /* Make image on left, text on right */
   align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
   padding: 3rem 0;
+  flex-wrap: wrap;
 }
 
 .hero__title {
@@ -1606,16 +1609,217 @@ img {
 }
 
 .hero__image {
+  flex: 1;
   display: flex;
   justify-content: center;
 }
-
 .hero__blob {
-  width: 250px;
+  width: 100%;
+  max-width: 250px;
 }
-
 .hero__blob-img {
   width: 180%;
   height: 145%;
   padding-left: 30px;
+}
+
+.hero__content {
+  flex: 1;
+}
+
+.hero__description {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: black;
+  max-width: 60ch;
+}
+
+.hero__description strong {
+  font-weight: 700;
+}
+
+.hero__description u {
+  text-decoration: underline;
+  text-decoration-color: var(--first-color); /* sky-400 like tailwind */
+  text-decoration-thickness: 2px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .hero__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero__content {
+    order: 2;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .hero__image {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: right-end; /* Center the image horizontally */
+    align-items: right-end; /* Center the image vertically */
+    overflow: hidden;
+  }
+
+  .hero__blob-img {
+    max-width: 100%;
+    width: 180%; /* Maintain aspect ratio */
+    height: 150%;
+    display: block;
+    object-fit: cover; /* Ensure the image covers the container */
+  }
+}
+/* From Uiverse.io by JaydipPrajapati1910 */ 
+/* From Uiverse.io by JaydipPrajapati1910 */
+/* location */
+.loader {
+  width: 44.8px;
+  height: 44.8px;
+  position: relative;
+  transform: rotate(45deg);
+  margin: 10px; /* Adjust the value as needed */
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50% 50% 0 50%;
+  background: #0000;
+  background-image: radial-gradient(circle 11.2px at 50% 50%, #0000 94%, #ff4747);
+}
+
+.loader:after {
+  animation: pulse-ytk0dhmd 1s infinite;
+  transform: perspective(336px) translateZ(0px);
+}
+
+@keyframes pulse-ytk0dhmd {
+  to {
+    transform: perspective(336px) translateZ(168px);
+    opacity: 0;
+  }
+}
+  
+/* phone */
+/* From Uiverse.io by andrew-demchenk0 */ 
+.button1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  border: none;
+  background-color: #30C04F;
+  margin-right: 10px;
+}
+
+/* .button:hover {
+  background-color: #2bac47;
+} */
+
+
+
+
+/* From Uiverse.io by deamelo */ 
+.main1 {
+  display: flex;
+  flex-direction: row; /* Align items in a single row */
+  gap: 0.5em;
+  justify-content: center; /* Center the icons horizontally */
+}
+
+.card1, .card2, .card3, .card4 {
+  width: 90px;
+  height: 90px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 15px; /* Make the corners rounded */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+              rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5em; /* Add some space between cards */
+  margin-top: 0.5em;
+}
+
+.whatsapp {
+  fill: #00ff00;
+}
+
+.linkedin {
+  fill: #0077b5;
+}
+
+.github {
+  fill: #333;
+}
+
+.discord {
+  fill: #8c9eff;
+}
+
+.card1:hover {
+  cursor: pointer;
+  transform: scale(1.1); /* Use transform for scaling */
+  background-color: #00ff00;
+}
+
+.card1:hover .whatsapp {
+  fill: white;
+}
+
+.card2:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: #0077b5;
+}
+
+.card2:hover .linkedin {
+  fill: white;
+}
+
+.card3:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: black;
+}
+
+.card3:hover .github {
+  fill: white;
+}
+
+.card4:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: #8c9eff;
+}
+
+.card4:hover .discord {
+  fill: white;
+}
+
+/* Existing styles for .main1 and cards remain unchanged */
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .card1, .card2, .card3, .card4 {
+    width: 60px; /* Reduce the width for smaller screens */
+    height: 60px; /* Reduce the height for smaller screens */
+    margin: 0.25em; /* Adjust margin for smaller screens */
+  }
 }
