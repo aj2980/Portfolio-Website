@@ -1037,7 +1037,7 @@ img {
   }
   
   .nav__link {
-    font-size: 0.55rem;
+    font-size: 0.45rem;
     padding: 0.15rem 0.05rem;
     min-width: 40px;
     flex: 1;
@@ -1088,6 +1088,11 @@ img {
   .portfolio__img {
     width: 200px;
   }
+}
+
+.nav__btns {
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (min-width: 568px) {
