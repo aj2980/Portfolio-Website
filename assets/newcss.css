@@ -1038,8 +1038,8 @@ img {
   
   .nav__link {
     font-size: 0.45rem;
-    padding: 0.15rem 0.05rem;
-    min-width: 40px;
+    padding: 0.05rem 0.05rem;
+    min-width: 20px;
     flex: 1;
   }
   
