@@ -192,7 +192,7 @@ function fetchLeetCodeStats() {
       document.getElementById('leetcode-solved').textContent = data.totalSolved || '--';
       document.getElementById('leetcode-easy').textContent = data.easySolved || '--';
       document.getElementById('leetcode-medium').textContent = data.mediumSolved || '--';
-      document.getElementById('leetcode-hard').textContent = data.hardSolved || '--';
+      // document.getElementById('leetcode-hard').textContent = data.hardSolved || '--';
     })
     .catch(error => {
       console.error('Error fetching LeetCode stats:', error);
@@ -200,7 +200,7 @@ function fetchLeetCodeStats() {
       document.getElementById('leetcode-solved').textContent = '300+';
       document.getElementById('leetcode-easy').textContent = '150+';
       document.getElementById('leetcode-medium').textContent = '120+';
-      document.getElementById('leetcode-hard').textContent = '30+';
+      // document.getElementById('leetcode-hard').textContent = '30+';
     });
 }
 
@@ -222,9 +222,9 @@ function fetchGFGStats() {
     .catch(error => {
       console.error('Error fetching GFG stats:', error);
       // Set fallback values in case of error
-      document.getElementById('gfg-rank').textContent = '7329';
-      document.getElementById('gfg-score').textContent = '450+';
-      document.getElementById('gfg-problems').textContent = '120+';
+      document.getElementById('gfg-rank').textContent = '223';
+      document.getElementById('gfg-score').textContent = '550+';
+      document.getElementById('gfg-problems').textContent = '150+';
     });
 }
 
