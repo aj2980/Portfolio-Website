@@ -62,6 +62,13 @@
   }
 }
 
+/* Font Size for mobile devices */
+@media screen and (max-width: 768px) {
+  :root {
+    --big-font-size: 1.5rem;
+  }
+}
+
 /*================= Variables Dark Theme ===============*/
 body.dark-theme {
   --first-color: #d1900e; /* Soft gold for accents */
@@ -388,6 +395,45 @@ img {
 /* Change Background header */
 .scroll-header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Fade-in animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Blinking cursor effect for typing animation */
+.hero__title::after {
+  content: '|';
+  animation: blink 1s step-start infinite;
+  margin-left: 5px;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
 }
 
 /*========HOME=============*/
@@ -1652,6 +1698,26 @@ img {
   color: var(--first-color);
 }
 
+/* Typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Blinking cursor */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--first-color);
+  }
+}
+
 .hero__subtitle {
   font-size: var(--h3-font-size);
   margin-top: 0.5rem;
@@ -1690,6 +1756,7 @@ img {
   font-size: 1.5rem;
   color: var(--first-color);
   font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .hero__info-name {

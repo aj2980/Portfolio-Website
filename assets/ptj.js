@@ -180,7 +180,7 @@ themeButton.addEventListener("click", () => {
 
 // Function to fetch LeetCode stats
 function fetchLeetCodeStats() {
-  fetch('https://leetcode-stats-api.herokuapp.com/aj2980')
+  fetch('https://leetcode-api-faisalshohag.vercel.app/aj2980')
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -206,7 +206,7 @@ function fetchLeetCodeStats() {
 
 // Function to fetch GeeksforGeeks stats
 function fetchGFGStats() {
-  fetch('https://geeks-for-geeks-api.vercel.app/jainabhi7mb6')
+  fetch('https://gfg-stats.tashif.codes/jainabhi7mb6/profile')
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -215,21 +215,129 @@ function fetchGFGStats() {
     })
     .then(data => {
       // Update the stats in the DOM
-      document.getElementById('gfg-rank').textContent = data.institution_rank || 'Top 5%';
-      document.getElementById('gfg-score').textContent = data.coding_score || '350+';
-      document.getElementById('gfg-problems').textContent = data.total_problems_solved || '200+';
+      document.getElementById('gfg-rank').textContent = data.instituteRank;
+      document.getElementById('gfg-score').textContent = data.codingScore;
+      document.getElementById('gfg-problems').textContent = data.totalProblemsSolved;
     })
     .catch(error => {
       console.error('Error fetching GFG stats:', error);
-      // Set fallback values in case of error
+      // Optional: fallback values
       document.getElementById('gfg-rank').textContent = '223';
       document.getElementById('gfg-score').textContent = '550+';
       document.getElementById('gfg-problems').textContent = '150+';
     });
 }
 
+
 // Call these functions when the document is loaded
 document.addEventListener('DOMContentLoaded', function() {
   fetchLeetCodeStats();
   fetchGFGStats();
+});
+
+// Word rotator for hero__title
+const heroTitle = document.querySelector('.hero__title');
+const words = ["Abhishek Jain", "Full Stack Developer", "AIML Developer"];
+let wordIndex = 0;
+let index = 0;
+let isDeleting = false;
+let speed = 150; // moderate speed
+
+function type() {
+  if (!heroTitle) return;
+
+  const currentWord = words[wordIndex];
+  const prefix = "Hi, I'm ";
+
+  if (!isDeleting && index <= currentWord.length) {
+    heroTitle.textContent = prefix + currentWord.substring(0, index);
+    index++;
+  } else if (isDeleting && index >= 0) {
+    heroTitle.textContent = prefix + currentWord.substring(0, index);
+    index--;
+  }
+
+  if (index === currentWord.length + 1) {
+    isDeleting = true;
+    speed = 100; // speed while deleting
+  } else if (index === 0) {
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+    speed = 150; // speed while typing
+  }
+
+  setTimeout(type, speed);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  type();
+});
+
+// Counter animation for hero__info-cards
+function animateCounters() {
+  const counters = document.querySelectorAll('.hero__info-title');
+  const duration = 2000; // Animation duration in milliseconds
+
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const start = +counter.innerText.replace('+', '') || 0;
+    const startTime = performance.now();
+    const hasPlus = counter.innerText.includes('+');
+
+    const animate = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Easing function for smooth animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const current = Math.floor(start + (target - start) * easeOutQuart);
+
+      counter.innerText = current + (hasPlus ? '+' : '');
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        counter.innerText = target + (hasPlus ? '+' : '');
+      }
+    };
+
+    requestAnimationFrame(animate);
+  });
+}
+
+// Intersection Observer for counter animation
+const heroSection = document.querySelector('.hero');
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounters();
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+if (heroSection) {
+  counterObserver.observe(heroSection);
+}
+
+// Fade-in animation on scroll
+const fadeInSections = document.querySelectorAll('.fade-in-section');
+
+const observerOptions = {
+  threshold: 0.1, // Trigger when 10% of the section is visible
+  rootMargin: '0px 0px -50px 0px' // Adjust as needed
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+    } else {
+      entry.target.classList.remove('animate');
+    }
+  });
+}, observerOptions);
+
+fadeInSections.forEach(section => {
+  observer.observe(section);
 });
