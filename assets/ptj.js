@@ -85,6 +85,14 @@ modalCloses.forEach((modalClose) => {
   });
 });
 
+modalViews.forEach((modalView) => {
+  modalView.addEventListener("click", (e) => {
+    if (e.target === modalView) {
+      modalView.classList.remove("active-modal");
+    }
+  });
+});
+
 /*======================= Portfolio Swiper ===================*/
 var swiper = new Swiper(".portfolio__container", {
   cssMode: true,

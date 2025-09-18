@@ -842,7 +842,7 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -856,6 +856,8 @@ img {
 .services__modal-content {
   position: relative;
   background-color: var(--container-color);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+              rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   padding: 1.5rem;
   border-radius: 1.25rem;
 }
