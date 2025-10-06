@@ -906,8 +906,8 @@ img {
 }
 
 .portfolio__img {
-  width: 310px;
-  border-radius: 0.5rem;
+  width: 510px;
+  border-radius: 0.9rem;
   justify-self: center;
 }
 
@@ -1158,7 +1158,7 @@ img {
   }
 
   .portfolio__img {
-    width: 200px;
+    width: 250px;
   }
 }
 
